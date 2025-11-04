@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Навигатор по колледжу</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>📍 Онлайн-навигатор по колледжу</h1>
+
+        <div class="search-box">
+            <select id="roomSelect">
+                <option value="">— Выберите кабинет —</option>
+            </select>
+            <button onclick="showRoute()">Построить маршрут</button>
+        </div>
+
+        <div id="result"></div>
+
+        <div class="map-container">
+            <img id="floorMap" src="{{ url_for('static', filename='images/floor1.png') }}" alt="Схема этажа">
+            <div id="highlight"></div>
+        </div>
+
+        <div class="nearby">
+            <h3>📍 Что рядом</h3>
+            <ul>
+                <li>Аптека — у главного входа</li>
+                <li>Столовая — 2 этаж, правое крыло</li>
+                <li>Магазин канцтоваров — 1 этаж, рядом с канцелярией</li>
+                <li>Библиотека — 3 этаж</li>
+                <li>Прокуратура — рядом с колледжем (курение запрещено!)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
